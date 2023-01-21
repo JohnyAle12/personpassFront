@@ -19,12 +19,12 @@ export const Login = () => {
     
     const onLoginSubmit = async(event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
+        
         const user = await loginService({email, password})
-        if(!user){
-            setLoginFailed(true);
-            return;
-        }
+            .catch(() => setLoginFailed(true))
 
+        if(!user) return;
+        
         setUser(user);
         navigate('/dashboard', {replace: true});
     }
