@@ -24,9 +24,9 @@ export const Login = () => {
             .catch(() => setLoginFailed(true))
 
         if(!user) return;
-        
+
         setUser(user);
-        navigate('/dashboard', {replace: true});
+        navigate('/dashboard');
     }
 
     return (

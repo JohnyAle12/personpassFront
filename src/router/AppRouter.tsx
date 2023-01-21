@@ -8,6 +8,7 @@ export const AppRouter = () => {
     <>
       <Routes>
         <Route path="/" element={<Login />} />
+        <Route path="/login" element={<Login />} />
 
         <Route path="/*" element={
           <PrivateRouter>

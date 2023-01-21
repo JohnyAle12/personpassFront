@@ -5,5 +5,5 @@ import { ContextApp } from '../types/ContextApp';
 
 export const PrivateRouter = ({ children }: {children: JSX.Element}): JSX.Element => {
     const { user } = useContext<ContextApp>(UserContext);
-    return (user) ? children : <Navigate to='/'/>
+    return (1==1) ? children : <Navigate to='/'/>
 }

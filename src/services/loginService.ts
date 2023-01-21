@@ -22,8 +22,8 @@ const loginService = async(props : Request): Promise<UserApp> => {
         mobile,
         email
     } = user;
-    
-    return {
+
+    const result = {
         id,
         name,
         lastname,
@@ -31,6 +31,9 @@ const loginService = async(props : Request): Promise<UserApp> => {
         email,
         token: access_token,
     }
+
+    localStorage.setItem('auth', JSON.stringify(result))
+    return result;
 }
 
 export default loginService;
